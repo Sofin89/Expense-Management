@@ -1,7 +1,8 @@
 import React from 'react';
 import { cn } from '../../utils';
 
-const Badge = React.forwardRef(({ className, variant = 'default', ...props }, ref) => {
+// ✅ Keep as named export but make sure it's exported correctly
+export const Badge = React.forwardRef(({ className, variant = 'default', ...props }, ref) => {
   const baseStyles = 'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2';
   
   const variants = {
@@ -27,4 +28,4 @@ const Badge = React.forwardRef(({ className, variant = 'default', ...props }, re
 
 Badge.displayName = 'Badge';
 
-export { Badge };
+// ✅ Make sure there's no default export if using named export

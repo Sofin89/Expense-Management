@@ -8,11 +8,13 @@ import { Analytics } from './Analytics';
 import { EmptyState } from './EmptyState';
 import { ExpenseForm } from '../expenses/ExpenseForm';
 import { ApprovalQueue } from '../approvals/ApprovalQueue';
+import { ApprovalStats } from '../approvals/ApprovalStats';
 
 export const Dashboard = () => {
   const { expenses, analytics, approvals } = useExpenses();
   const { user } = useAuthStore();
   const hasData = expenses.length > 0;
+  const isManager = user?.role === 'manager' || user?.role === 'admin';
 
   if (!hasData) {
     return (
@@ -45,13 +47,19 @@ export const Dashboard = () => {
 
       <KpiCards />
       
+      {/* Approval Stats for Managers/Admins */}
+      {isManager && approvals.length > 0 && (
+        <ApprovalStats />
+      )}
+      
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
           <Analytics />
         </div>
         
-        <div>
-          {user?.role !== 'employee' && approvals.length > 0 && (
+        <div className="space-y-6">
+          {/* Approval Queue for Managers/Admins */}
+          {isManager && approvals.length > 0 && (
             <ApprovalQueue />
           )}
           

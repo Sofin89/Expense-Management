@@ -7,6 +7,7 @@ import { RegisterForm } from './components/auth/RegisterForm';
 import { Layout } from './components/layout/Layout';
 import { Dashboard } from './components/dashboard/Dashboard';
 import { motion, AnimatePresence } from 'framer-motion';
+import { AdminPanel } from './components/admin/AdminPanel';
 
 function App() {
   const { isAuthenticated, loading } = useAuth();
@@ -49,11 +50,14 @@ function App() {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/expenses" element={<Dashboard />} />
-          <Route path="/approvals" element={<Dashboard />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+  <Route path="/" element={<Dashboard />} />
+  <Route path="/expenses" element={<Dashboard />} />
+  <Route path="/approvals" element={<Dashboard />} />
+  <Route path="/admin" element={<AdminPanel />} />
+  <Route path="/admin/users" element={<AdminPanel />} />
+  <Route path="/admin/settings" element={<AdminPanel />} />
+  <Route path="*" element={<Navigate to="/" replace />} />
+</Routes>
       </Layout>
     </Router>
   );
