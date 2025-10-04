@@ -117,23 +117,6 @@ npm run setup
 2. Environment Configuration
 Create .env file:
 
-env
-# Database
-MONGO_URI=mongodb://localhost:27017/expenseflow
-JWT_SECRET=your-super-secret-jwt-key
-
-# Email (SendGrid Primary + SMTP Fallback)
-SENDGRID_API_KEY=your-sendgrid-api-key
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-
-# File Storage
-CLOUDINARY_URL=your-cloudinary-url
-
-# Exchange Rates (Optional)
-EXCHANGE_RATE_API_KEY=your-api-key
 
 # Frontend
 VITE_API_URL=http://localhost:5000
