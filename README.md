@@ -106,6 +106,23 @@ MongoDB Atlas or local
 
 SendGrid account (free tier)
 
+  Folder structure
+
+expenseflow-pro/
+├── 📁 frontend/                 # React + Vite
+│   ├── 📁 src/
+│   │   ├── 📁 components/       # Reusable UI components
+│   │   ├── 📁 hooks/            # Custom React hooks
+│   │   ├── 📁 store/            # Zustand state management
+│   │   └── 📁 utils/            # Utilities & API calls
+├── 📁 backend/                  # Node.js + Express
+│   ├── 📁 controllers/          # Route controllers
+│   ├── 📁 middleware/           # Auth & validation
+│   ├── 📁 models/               # MongoDB models
+│   ├── 📁 services/             # Business logic
+│   └── 📁 utils/                # Helpers & configurations
+└── 📄 README.md                 # This file
+
 1. Clone & Setup
 bash
 # Clone the repository
